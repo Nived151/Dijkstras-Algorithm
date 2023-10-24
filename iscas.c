@@ -90,7 +90,7 @@ int dijkstra(int start, int end) {
     return dist[end];
 }
 
-int main() {
+int main(int argc, char** argv) {
     // Define the circuit gates and delays
     addGate("G1gat", 1);
     addGate("G2gat", 1);
@@ -112,7 +112,7 @@ int main() {
     addConnection("G11gat", "G16gat", 1);
     addConnection("G7gat", "G19gat", 1);
     addConnection("G10gat", "G22gat", 1);
-    addConnection("G16gat", "G22gat", 1);
+    addConnection("G16gat", "G2gat", 1);
     addConnection("G16gat", "G23gat", 1);
     addConnection("G19gat", "G23gat", 1);
 
@@ -120,10 +120,13 @@ int main() {
     char startGate[MAX_GATE_NAME_LEN];
     char endGate[MAX_GATE_NAME_LEN];
 
-    printf("Enter the name of the starting gate: ");
-    scanf("%s", startGate);
-    printf("Enter the name of the ending gate: ");
-    scanf("%s", endGate);
+    //printf("Enter the name of the starting gate: ");
+    //scanf("%s", startGate);
+    //printf("Enter the name of the ending gate: ");
+    //scanf("%s", endGate);
+
+    strcpy(startGate,argv[1]);
+    strcpy(endGate,argv[2]);
 
     int start = findGateIndex(startGate);
     int end = findGateIndex(endGate);
