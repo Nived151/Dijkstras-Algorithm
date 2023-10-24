@@ -1,0 +1,10 @@
+CC=gcc
+CFLAGS=-I.
+DEPS = iscas.h
+OBJ = iscas.o
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+iscas: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
