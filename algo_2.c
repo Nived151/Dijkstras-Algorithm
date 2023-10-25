@@ -105,18 +105,18 @@ int main(int argc, char** argv) {
     addGate("G23gat", 1);
 
     // Define the connections and fanouts
-    addConnection("G1gat", "G10gat", 1);
-    addConnection("G3gat", "G10gat", 1);
-    addConnection("G3gat", "G11gat", 1);
-    addConnection("G6gat", "G11gat", 1);
-    addConnection("G2gat", "G16gat", 1);
-    addConnection("G11gat", "G16gat", 1);
-    addConnection("G11gat", "G19gat", 1);
-    addConnection("G7gat", "G19gat", 1);
-    addConnection("G10gat", "G22gat", 1);
-    addConnection("G16gat", "G22gat", 1);
-    addConnection("G16gat", "G23gat", 1);
-    addConnection("G19gat", "G23gat", 1);
+    addConnection("G1gat", "G10gat", 5);
+    addConnection("G3gat", "G10gat", 3);
+    addConnection("G3gat", "G11gat", 2);
+    addConnection("G6gat", "G11gat", 6);
+    addConnection("G2gat", "G16gat", 5);
+    addConnection("G11gat", "G16gat", 3);
+    addConnection("G11gat", "G19gat", 2);
+    addConnection("G7gat", "G19gat", 6);
+    addConnection("G10gat", "G22gat", 5);
+    addConnection("G16gat", "G22gat", 3);
+    addConnection("G16gat", "G23gat", 2);
+    addConnection("G19gat", "G23gat", 6);
 
     // Find the shortest path in terms of delay from a user-provided input to output
     char startGate[MAX_GATE_NAME_LEN];
