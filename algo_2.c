@@ -44,7 +44,8 @@ void addConnection(const char from[MAX_GATE_NAME_LEN], const char to[MAX_GATE_NA
 
 // Function to find the gate index by name
 int findGateIndex(const char name[MAX_GATE_NAME_LEN]) {
-    for (int i = 0; i < num_gates; i++) {
+    int i;
+    for (i = 0; i < num_gates; i++) {
         if (strcmp(gates[i].name, name) == 0) {
             return i;
         }
@@ -56,19 +57,21 @@ int findGateIndex(const char name[MAX_GATE_NAME_LEN]) {
 int dijkstra(int start, int end) {
     int dist[MAX_NUM_GATES];
     int visited[MAX_NUM_GATES];
+    int i;
 
-    for (int i = 0; i < num_gates; i++) {
+    for (i = 0; i < num_gates; i++) {
         dist[i] = INF;
         visited[i] = 0;
     }
 
     dist[start] = 0;
-
-    for (int count = 0; count < num_gates - 1; count++) {
+    int count;
+    for (count = 0; count < num_gates - 1; count++) {
         int minDist = INF;
         int u = -1;
 
-        for (int v = 0; v < num_gates; v++) {
+        int v;
+        for (v = 0; v < num_gates; v++) {
             if (!visited[v] && dist[v] < minDist) {
                 minDist = dist[v];
                 u = v;
@@ -77,7 +80,7 @@ int dijkstra(int start, int end) {
 
         visited[u] = 1;
 
-        for (int v = 0; v < num_gates; v++) {
+        for (v = 0; v < num_gates; v++) {
             if (!visited[v] && connections[u].fanout > 0) {
                 int alt = dist[u] + (connections[u].fanout * gates[v].delay);
                 if (alt < dist[v]) {
