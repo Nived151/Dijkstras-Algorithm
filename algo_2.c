@@ -94,7 +94,7 @@ int dijkstra(int start, int end) {
 }
 
 int main(int argc, char** argv) {
-    // Define the circuit gates and delays
+    /* Define the circuit gates and delays
     addGate("G1gat", 1);
     addGate("G2gat", 1);
     addGate("G3gat", 1);
@@ -105,7 +105,7 @@ int main(int argc, char** argv) {
     addGate("G16gat", 1);
     addGate("G19gat", 1);
     addGate("G22gat", 1);
-    addGate("G23gat", 1);
+    addGate("G23gat", 1);*/
 
     // Define the connections and fanouts
     addConnection("G1gat", "G10gat", 5);
