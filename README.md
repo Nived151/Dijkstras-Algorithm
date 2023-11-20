@@ -1,2 +1,2 @@
 # DAA Project
- dijkstra's shortest path algorithm
+ Dijkstra's shortest path algorithm
